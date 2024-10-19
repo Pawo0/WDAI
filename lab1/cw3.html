@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cwiczenie 3: Kolorowe kwadraty</title>
+    <style>
+        #container {
+            flex-direction: column;
+        }
+
+        .kwadrat {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+        #row1, #row2{
+            display: flex;
+            margin: 20px;
+            justify-content: center;
+        }
+        #n1{
+            background-color: khaki;
+        }
+        #n2{
+            background-color: greenyellow;
+        }
+        #n3{
+            background-color: indigo;
+        }
+        #n5{
+            background-color: firebrick;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="row1">
+        <div class="kwadrat" id="n1"></div>
+        <div class="kwadrat" id="n2"></div>
+    </div>
+    <div id="row2">
+        <div class="kwadrat" id="n3"></div>
+        <img src="assets/gandalf.jpg" alt="gandalf" class="kwadrat" id="n4"></img>
+        <div class="kwadrat" id="n5"></div>
+    </div>
+</div>
+</body>
+</html>
