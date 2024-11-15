@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #ccc;;
+}
+#main{
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+#main label{
+    border: 1px solid black;
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    background-color: #f15252;
+}
+.complete{
+    background-color: #58df58 !important;
+}
+.hidden{
+    display: none;
+}
+.info{
+    font-size: small;
+    color: #404040;
+}
