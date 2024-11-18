@@ -9,23 +9,28 @@
 <div id="main">
     <h1>Password generator</h1>
     <div class="row">
-        <label for="minLength">Min password length</label>
-        <input type="number" id="minLength" placeholder="8">
+        <label for="minLength" class="rowLabel">Min password length</label>
+        <div class="rangeSet">
+            <label for="minLengthRange"></label><input type="range" id="minLengthRange" class="mainRange" min="3" max="128">
+            <input type="number" id="minLength" placeholder="8" disabled>
+        </div>
     </div>
     <div class="row">
-        <label for="maxLength">Max password length</label>
-        <input type="number" id="maxLength" placeholder="12">
+        <label for="maxLength" class="rowLabel">Max password length</label>
+        <div class="rangeSet">
+            <label for="maxLengthRange"></label><input type="range" id="maxLengthRange" class="mainRange" min="3" max="128">
+            <input type="number" id="maxLength" placeholder="12" disabled>
+        </div>
     </div>
     <div class="row">
-        <label for="capital">Capital letters</label>
+        <label for="capital" class="rowLabel">Capital letters</label>
         <input type="checkbox" id="capital">
     </div>
     <div class="row">
-        <label for="special">Special characters</label>
+        <label for="special" class="rowLabel">Special characters</label>
         <input type="checkbox" id="special">
     </div>
     <button id="generateBtn">Generate</button>
-    <div id="generatedPassword"></div>
 </div>
 <script src="script.js"></script>
 </body>
