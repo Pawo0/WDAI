@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #ccc;;
+}
+#main{
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+#searchBar{
+    background-color: gray;
+    padding: 25px;
+    font-size: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+    border-radius: 25px;
+}
+#searchBar input{
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 1em;
+}
+#searchBar select{
+    font-size: 1em;
+    padding: 10px;
+    text-align: center;
+}
+#searchBar button{
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 20px;
+}
+#main table{
+    border-collapse: collapse;
+}
+#main table td, #main table th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#main table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+#main table tr:nth-child(odd){
+    background-color: #ddd;
+}
+#main table tr:nth-child(odd):hover{
+    background-color: #cbcbcb;
+}
+#main table tr:hover{
+    background-color: #e5e5e5;
+}
+#main table th{
+    padding: 15px;
+    background-color: #cccc;
+    color: black;
+}
+#main img{
+    width: 100px;
+    height: 100px;
+}
