@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccc;;
+}
+
+#main {
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#buttons {
+    display: flex;
+}
+
+#buttons button {
+    padding: 15px;
+    margin: 10px;
+    font-size: 1em;
+    width: 100px;
+}
+
+#screen {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    width: 150px;
+    border-radius: 20px;
+    border: 1px solid #404040;
+    text-align: center;
+}
