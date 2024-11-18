@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password generator</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div id="main">
+    <h1>Password generator</h1>
+    <div class="row">
+        <label for="minLength">Min password length</label>
+        <input type="number" id="minLength" placeholder="8">
+    </div>
+    <div class="row">
+        <label for="maxLength">Max password length</label>
+        <input type="number" id="maxLength" placeholder="12">
+    </div>
+    <div class="row">
+        <label for="capital">Capital letters</label>
+        <input type="checkbox" id="capital">
+    </div>
+    <div class="row">
+        <label for="special">Special characters</label>
+        <input type="checkbox" id="special">
+    </div>
+    <button id="generateBtn">Generate</button>
+    <div id="generatedPassword"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

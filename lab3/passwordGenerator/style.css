@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ccc;;
+}
+
+#main {
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    min-height: 80vh;
+}
+.row{
+    display: flex;
+    width: 80%;
+}
+.row label{
+    flex: 2;
+}
+.row input{
+    flex: 1;
+}
