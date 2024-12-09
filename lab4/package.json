@@ -1,0 +1,20 @@
+{
+  "name": "lab4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "createDB": "node createDB.js",
+    "serwer": "nodemon app.js",
+    "serwis1": "nodemon serwis1/app.js",
+    "serwis2": "nodemon serwis2/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.7",
+    "sequelize": "^6.37.5",
+    "sqlite3": "^5.1.7"
+  }
+}
