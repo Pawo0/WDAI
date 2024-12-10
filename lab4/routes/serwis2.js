@@ -9,6 +9,9 @@ const db = new sqlite3.Database("./database.db", (err) => {
   console.log("Connected to the orders database.");
 });
 
+// middleware
+const authentication = require("../middleware/authentication");
+
 router.get("/", (req, res) => {
   const query = "select * from orders";
   db.all(query, [], (err, rows) => {
@@ -32,14 +35,23 @@ router.get("/:userId", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
-  const { book_id, user_id, quantity } = req.body;
+router.post("/", authentication, (req, res) => {
+  const { book_id, quantity } = req.body;
+  const user_id = req.user.id;
   if (!book_id || !user_id || !quantity) {
     return res.status(400).json("book_id, user_id, quantity are required");
   }
-  // todo dodawanie user_id z jwt
 
-  // todo sprawdz czy ksiazka istnieje
+  const get_book = "select * from books where id = ?";
+  db.get(get_book, [book_id], (err, book) => {
+    if (err) {
+      console.error("error ", err.message);
+      return res.status(500).json("Server error");
+    }
+    if (!book) {
+      return res.status(404).json("Book not found");
+    }
+  })
 
   const query =
     "insert into orders (book_id, user_id, quantity) values (?, ?, ?)";
@@ -52,7 +64,8 @@ router.post("/", (req, res) => {
   });
 });
 
-router.delete("/:id", (req, res) => {
+
+router.delete("/:id", authentication, (req, res) => {
   const { id } = req.params;
   const query = "delete from orders where id = ?";
   db.run(query, [id], function (err) {
@@ -67,7 +80,7 @@ router.delete("/:id", (req, res) => {
   });
 });
 
-router.patch("/:id", (req, res) => {
+router.patch("/:id", authentication, (req, res) => {
   const { id } = req.params;
   const get_old_order = "select * from orders where id = ?";
   db.get(get_old_order, [id], (err, old_order) => {
@@ -84,16 +97,16 @@ router.patch("/:id", (req, res) => {
     const new_user_id = req.body.user_id || old_order.user_id;
     const new_quantity = req.body.quantity || old_order.quantity;
 
-    const query = "update orders set book_id = ?, user_id = ?, quantity = ? where id = ?";
+    const query =
+      "update orders set book_id = ?, user_id = ?, quantity = ? where id = ?";
     db.run(query, [new_book_id, new_user_id, new_quantity, id], (err) => {
       if (err) {
         console.error("error ", err.message);
         return res.status(500).json("Server error");
       }
       res.status(200).json(`Order with id ${id} successfully updated`);
-    })
-
-  })
+    });
+  });
 });
 
 module.exports = router;

@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
+const jwt = require('jsonwebtoken');
 
 const User = sequelize.define("User", {
   id: {
@@ -26,4 +27,10 @@ const User = sequelize.define("User", {
   },
 }, {timestamps:false});
 
-module.exports = User;
+
+
+function createJwt (payload){
+    return jwt.sign(payload, process.env.JWT_SECRET, {expiresIn: '1d'})  
+}
+
+module.exports = { User, createJwt };
