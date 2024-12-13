@@ -7,8 +7,7 @@ module.exports = (req, res, next) => {
             return res.status(401).json("auth not found");
         }
         const token = auth.split(" ")[1];
-        const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = decodedToken;
+        req.user = jwt.verify(token, process.env.JWT_SECRET);
         next();
     } catch (error) {
         console.error("error ", error.message);
