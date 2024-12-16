@@ -39,10 +39,10 @@ const login = async (req, res) => {
       },
     });
     if (!user) {
-      return res.status(404).json("Bad email or password");
+      return res.status(401).json("Bad email or password");
     }
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
-      expiresIn: "1d",
+      expiresIn: "1h",
     });
     res.setHeader("Authorization", `Bearer ${token}`);
     res.status(200).json({ user, token });
