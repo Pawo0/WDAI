@@ -4,19 +4,20 @@
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
   margin: 0;
+  border-bottom: 30px solid #58df58;
 }
 .block{
   width: 100px;
-  height: 50px;
+  height: 30px;
   margin: 2px;
-  background-color: #58df58;
 }
 .menu{
   width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:10px
+  gap:10px;
+  padding: 2px;
 }
 .main{
   display: flex;
@@ -31,4 +32,16 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+.header{
+    background-color: saddlebrown;
+    padding: 10px;
+    margin: 5px;
+}
+.main button{
+    width: 30px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

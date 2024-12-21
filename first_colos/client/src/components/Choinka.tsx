@@ -5,7 +5,6 @@ interface ChoinkaSets {
   id: number;
 }
 
-import "../App.css"
 
 export default function Choinka(props: any) {
   const [height, setHeight] = useState<number>(props.cnt)
@@ -14,7 +13,15 @@ export default function Choinka(props: any) {
     elements.push({size: 100 - i * 5, id: i})
   }
   const choinkaElement = elements.map(el => (
-    <div key={el.id} className={"block"} style={{width:el.size}}></div>
+    <div key={el.id} className={"block"} style={{width:el.size}}>
+      <div
+        className={"triangle"}
+        style={{
+          borderLeft: `${el.size/2}px solid transparent`,
+          borderRight: `${el.size/2}px solid transparent`
+      }}
+      ></div>
+    </div>
   ))
   choinkaElement.reverse()
 

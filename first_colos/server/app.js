@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 
 app.get("/kolor", (req, res) => {
-    return res.json({ kolor: "#21e1e1" });
+    return res.json({ kolor: "blue" });
 });
 
 app.listen(3000, () => {
