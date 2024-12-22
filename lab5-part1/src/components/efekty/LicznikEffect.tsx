@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Licznik() {
+export default function LicznikEffect() {
   const [licznik, setLicznik] = useState(0);
 
   const handleClick = () => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 
 export default function Tytul() {
   const [topic, setTopic] = useState("");
@@ -13,3 +13,4 @@ export default function Tytul() {
 
   return <input type="text" onChange={handleChange}/>;
 }
+
