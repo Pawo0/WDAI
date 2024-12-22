@@ -1,0 +1,10 @@
+header{
+  height: 80px;
+  background-color: saddlebrown;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+body{
+  margin:0;
+}
