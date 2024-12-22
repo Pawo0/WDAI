@@ -10,17 +10,22 @@ export default function AddElement() {
     e.preventDefault()
     const storage = localStorage.getItem("articles")
     const articles: ArticleInterface[] = storage ? JSON.parse(storage) : []
-    articles.push({
-      id, title, content
+    const contains = articles.find(el => el.id === Number(id))
+    if (contains) {
+      alert("To id juz istnieje")
+      return
+    }
+    articles.unshift({
+      id: Number(id), title, content
     })
     localStorage.setItem("articles", JSON.stringify(articles));
-    setId(0);
+    setId("");
     setTitle("")
     setContent("")
     navigate("/blog")
 
   }
-  const [id, setId] = useState<number>(0);
+  const [id, setId] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 

@@ -1,4 +1,4 @@
-import Article from "../components/Article.tsx";
+import ArticleBlock from "../components/ArticleBlock.tsx";
 import {useEffect, useState} from "react";
 import {ArticleInterface} from "../components/interfaces.tsx";
 import {Link} from "react-router-dom";
@@ -10,7 +10,9 @@ export default function MainPage() {
     setArticles(storage ? JSON.parse(storage) : [])
   }, [])
   const articlesElements = articles.map(el => (
-    <Article id={el.id} title={el.title} content={el.content}/>
+    <Link key={el.id} to={`/article/${el.id}`}>
+      <ArticleBlock id={el.id} title={el.title} content={el.content}/>
+    </Link>
   ))
 
   return (
@@ -18,7 +20,7 @@ export default function MainPage() {
       <div className={"main"}>
         <Link to={"/add"}>
           <div className={"addContainer"}>
-            <Article id={0} title={"Title"} content={""} add={true}/>
+            <ArticleBlock id={0} title={"Title"} content={""} add={true}/>
             <div className={"addButton"}>+</div>
           </div>
         </Link>
