@@ -10,22 +10,23 @@ export default function AddElement() {
     e.preventDefault()
     const storage = localStorage.getItem("articles")
     const articles: ArticleInterface[] = storage ? JSON.parse(storage) : []
-    const contains = articles.find(el => el.id === Number(id))
-    if (contains) {
-      alert("To id juz istnieje")
+    let id:number;
+    if (articles.length === 0) id = 1
+    else id = articles[0].id + 1
+    if (!title || !content) {
+      alert("Pola nie mogą być puste!")
       return
     }
     articles.unshift({
-      id: Number(id), title, content
+      id, title, content
     })
     localStorage.setItem("articles", JSON.stringify(articles));
-    setId("");
     setTitle("")
     setContent("")
     navigate("/blog")
 
   }
-  const [id, setId] = useState("");
+  // const [id, setId] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
@@ -36,10 +37,13 @@ export default function AddElement() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input value={id ? id : ""} onChange={(e) => handleChange(e, setId)} type={"number"} placeholder={"id"}/>
-        <input value={title} onChange={(e) => handleChange(e, setTitle)} placeholder={"title"}/>
-        <textarea value={content} onChange={(e) => handleChange(e, setContent)} placeholder={"content"}></textarea>
+      <form className={"form-box"} onSubmit={handleSubmit}>
+        {/*<input className={"form-id"} name={"id"} value={id ? id : ""} onChange={(e) => handleChange(e, setId)}*/}
+        {/*       type={"number"} placeholder={"id"}/>*/}
+        <input className={"form-title"} name={"title"} value={title} onChange={(e) => handleChange(e, setTitle)}
+               placeholder={"title"}/>
+        <textarea className={"form-content"} name={"content"} value={content}
+                  onChange={(e) => handleChange(e, setContent)} placeholder={"content"}></textarea>
         <button>Dodaj</button>
       </form>
     </>

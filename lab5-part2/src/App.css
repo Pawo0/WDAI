@@ -90,7 +90,7 @@ a {
   justify-content: space-between;
 }
 
-.article-title{
+.article-title {
   padding: 20px;
   background-color: darkgray;
   border-radius: 15px 15px 0 0;
@@ -99,14 +99,37 @@ a {
   font-size: 1.2rem;
 }
 
-.article-content{
-  flex:1;
+.article-content {
+  flex: 1;
   padding: 20px;
 }
 
-.article-id{
+.article-id {
   padding: 20px;
   background-color: darkgray;
   border-radius: 0 0 15px 15px;
   border-top: 1px solid black;
+}
+.form-box{
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  border: 1px solid black;
+  border-radius: 15px;
+  padding: 15px;
+}
+.form-id{
+  padding: 5px;
+}
+.form-title{
+  padding: 5px;
+}
+.form-content{
+  resize: none;
+  height: 150px;
+}
+.link:hover{
+  color:red;
 }
