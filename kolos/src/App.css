@@ -1,0 +1,5 @@
+body{
+    height: 100vh;
+    background-image: url("assets/baloooons.jpg");
+    background-size: cover;
+}
